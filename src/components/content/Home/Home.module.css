@@ -1,0 +1,28 @@
+.homeContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.homeContent a {
+    color: white;
+}
+
+.homeContent p {
+    margin: 0 0 15px 0;
+}
+
+.imgWrapper {
+
+}
+
+.meImg {
+    margin-top: 25px;
+    width: 500px;
+    border-radius: 15px;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.meImg:hover {
+    transform: scale(7);
+}

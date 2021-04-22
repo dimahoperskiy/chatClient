@@ -1,0 +1,46 @@
+.user {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.avaImg {
+    width: 75px;
+    height: 75px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.userInfo {
+    grid-area: info;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+.locName {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.ava {
+    grid-area: ava;
+}
+
+.name {
+    grid-area: n;
+}
+
+.status {
+    grid-area: s;
+}
+
+.location {
+    grid-area: l;
+}
+
+.followButton {
+    grid-area: b;
+}

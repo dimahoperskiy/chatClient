@@ -1,0 +1,30 @@
+.link {
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-self: center;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+}
+
+.name {
+    margin: 0;
+    align-self: center;
+}
+
+
+.ava {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+
+.link.active p {
+    color: white;
+}
+
+.link.active .ava {
+    border: 2px solid white;
+}
+

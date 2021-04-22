@@ -1,0 +1,103 @@
+.message {
+    display: flex;
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.messageContent {
+    display: flex;
+    width: 92%;
+}
+
+.spanContent {
+    display: flex;
+    width: 4%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.message.send {
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+h4 {
+    margin: 0;
+}
+
+.content {
+    margin-left: 2%;
+}
+
+.ava {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.messageText {
+    margin: 0;
+}
+
+.popup {
+    background-color: white;
+    border-radius: 12px;
+    padding: 0 10px;
+}
+
+.popup p {
+    margin-bottom: 5px;
+}
+
+.spans {
+    display: flex;
+    justify-content: space-around;
+}
+
+.spans span:hover {
+    cursor: pointer;
+}
+
+.delete {
+    font-size: 10px;
+}
+
+.delete:hover {
+    cursor: pointer;
+}
+
+.edit {
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.editForm {
+    padding: 10px 5px;
+}
+
+.textarea {
+    min-height: 70px;
+    resize: none;
+}
+
+.formButtons {
+    display: flex;
+}
+
+.formButtons div button {
+    background: none;
+    border: none;
+}
+
+.editLabel {
+    text-align: center;
+    padding: 5px 0;
+}
+
+
+

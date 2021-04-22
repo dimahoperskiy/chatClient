@@ -1,0 +1,33 @@
+.logo {
+    width: auto;
+    height: auto;
+    margin: 5px;
+    border-radius: 50%;
+    transition: all 2s ease;
+}
+
+.logo:hover {
+    transform: rotateY(360deg);
+}
+
+.header {
+    grid-area: header;
+    background-color: #30c3be;
+    display: flex;
+    height: 50px;
+}
+
+.login {
+    display: flex;
+    align-self: center;
+    float: right;
+    position: absolute;
+    right: 5%;
+}
+
+.link {
+    color: white;
+    margin-right: 30px;
+    font-weight: bold;
+}
+

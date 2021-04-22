@@ -1,0 +1,16 @@
+.info {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 1em;
+}
+
+.userInfo {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 22px;
+}

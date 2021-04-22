@@ -1,0 +1,16 @@
+.usersWrapper {
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.activePage {
+    font-weight: bold;
+}
+
+.pageLink {
+    cursor: pointer;
+}

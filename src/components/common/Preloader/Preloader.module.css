@@ -1,0 +1,18 @@
+.preloader {
+    width: 50px;
+    height: 50px;
+    border-radius: 33px;
+    animation: lds-dual-ring 1.2s linear infinite;
+    position: absolute;
+    top: 53%;
+    left: 56%;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

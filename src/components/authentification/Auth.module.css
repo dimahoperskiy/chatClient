@@ -1,0 +1,76 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link {
+    color: white;
+}
+
+.notRegistered {
+    display: flex;
+    margin-top: 50px;
+}
+
+.notRegisteredText {
+    margin: 0 15px 0 0;
+}
+
+/*Form*/
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+}
+
+.rememberMeText {
+    margin: 0;
+}
+
+.formWrapper {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputWrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    width: -webkit-fill-available;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.btnWrapper {
+    width: 50%;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #300e2d;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.errorSpan {
+    margin-top: 10px;
+    color: red;
+    font-weight: 500;
+}
+
+.errorActive {
+    border: 2px solid red;
+}

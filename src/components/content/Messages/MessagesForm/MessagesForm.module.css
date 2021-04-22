@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+}
+
+.textareaWrapper {
+    width: 80%;
+}
+
+.textarea {
+    height: 100px;
+    width: 97%;
+    resize: none;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.btnWrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.btn {
+    background-image: url("sendMessage.png");
+    background-size: 41px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+}
+
+.btnActive {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
