@@ -10,15 +10,15 @@ import HttpsRedirect from 'react-https-redirect';
 
 
 ReactDOM.render(
-    <HttpsRedirect>
         <BrowserRouter>
             <React.StrictMode>
                 <Provider store={store}>
-                    <AppContainer/>
+                    <HttpsRedirect>
+                        <AppContainer/>
+                    </HttpsRedirect>
                 </Provider>
             </React.StrictMode>
-        </BrowserRouter>
-    </HttpsRedirect>,
+        </BrowserRouter>,
     document.getElementById('root')
 );
 
