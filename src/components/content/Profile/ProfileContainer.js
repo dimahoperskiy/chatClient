@@ -26,13 +26,13 @@ class ProfileAPI extends React.Component {
         let userId = this.props.match.params.userId
 
         if (userId) {
-            axios.get("http://89.108.65.167:8092/users/" + userId)
+            axios.get("http://dimahoperskiy.ru:8092/users/" + userId)
                 .then(response => {
                     this.props.setUser(response.data)
                     this.props.toggleIsFetching(false)
                 })
         } else {
-            axios.get("http://89.108.65.167:8092/users/profile", {withCredentials: true})
+            axios.get("http://dimahoperskiy.ru:8092/users/profile", {withCredentials: true})
                 .then(response => {
                     this.props.setUser(response.data)
                     this.props.toggleIsFetching(false)

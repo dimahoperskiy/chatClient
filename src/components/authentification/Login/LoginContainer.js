@@ -22,7 +22,7 @@ let mapDispatchToProps = {
 
 class LoginContainer extends React.Component {
     login = (formData, dispatch, func) => {
-        axios.post("http://89.108.65.167:8092/login",
+        axios.post("http://dimahoperskiy.ru:8092/login",
             {login: formData.login, password: formData.password},
             {withCredentials: true})
             .then(response => {

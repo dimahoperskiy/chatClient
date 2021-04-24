@@ -27,7 +27,7 @@ const mapDispatchToProps = {
 
 class AppContainer extends React.Component {
     componentDidMount() {
-        axios.get("http://89.108.65.167:8092/users/profile", {withCredentials: true})
+        axios.get("http://dimahoperskiy.ru:8092/users/profile", {withCredentials: true})
             .then(response => {
                 this.props.setCurrentUser(response.data.login, response.data.email, response.data.id)
             })
@@ -47,7 +47,7 @@ class AppContainer extends React.Component {
     }
 
     connect = () => {
-        let sock = new SockJS("http://89.108.65.167:8092/ws");
+        let sock = new SockJS("http://dimahoperskiy.ru:8092/ws");
         this.stompClient = Stomp.over(sock)
         this.stompClient.debug = null
         this.stompClient.connect({}, this.onConnected, this.onError);
@@ -73,7 +73,7 @@ class AppContainer extends React.Component {
             let newMessages = this.props.messages.filter(el => el.id !== notification.id)
             this.props.setMessages(newMessages)
         } else if (notification.updated) { // об обновлении
-            axios.get("http://89.108.65.167:8092/messages/" + notification.id)
+            axios.get("http://dimahoperskiy.ru:8092/messages/" + notification.id)
                 .then((message) => {
                     let content = message.data.content
                     let newMessages = this.props.messages.map(el => {
@@ -84,7 +84,7 @@ class AppContainer extends React.Component {
                 })
         } else { // о новом сообщении
             debugger
-            axios.get("http://89.108.65.167:8092/messages/" + notification.id)
+            axios.get("http://dimahoperskiy.ru:8092/messages/" + notification.id)
                 .then((message) => {
                     debugger
                     this.props.updateMessages(message.data);
@@ -94,7 +94,7 @@ class AppContainer extends React.Component {
     };
 
     sendMessage = (formData, dispatch) => {
-        axios.get("http://89.108.65.167:8092/users/" + this.props.recipient)
+        axios.get("http://dimahoperskiy.ru:8092/users/" + this.props.recipient)
             .then(response => {
                 debugger
                 let msg = formData.text

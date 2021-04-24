@@ -16,10 +16,10 @@ let initialState = {
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
-            // axios.put("http://89.108.65.167:8092/users", {id: action.userId, follow: true})
+            // axios.put("http://dimahoperskiy.ru:8092/users", {id: action.userId, follow: true})
             return ({
                 ...state,
-                // users: axios.get("http://89.108.65.167:8092/users").then(response => response)
+                // users: axios.get("http://dimahoperskiy.ru:8092/users").then(response => response)
                 users: state.users.map(el => {
                     if (el.id === action.userId) {
                         return {...el, follow: true}
@@ -27,10 +27,10 @@ const usersReducer = (state = initialState, action) => {
                 })
             })
         case UNFOLLOW:
-            // axios.put("http://89.108.65.167:8092/users", {id: action.userId, follow: false})
+            // axios.put("http://dimahoperskiy.ru:8092/users", {id: action.userId, follow: false})
             return ({
                 ...state,
-                // users: axios.get("http://89.108.65.167:8092/users").then(response => response)
+                // users: axios.get("http://dimahoperskiy.ru:8092/users").then(response => response)
                 users: state.users.map(el => {
                     if (el.id === action.userId) {
                         return {...el, follow: false}

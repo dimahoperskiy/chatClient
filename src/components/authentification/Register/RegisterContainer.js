@@ -24,7 +24,7 @@ const mapDispatchToProps = {
 
 class RegisterContainer extends React.Component {
     register = (formData, dispatch, func) => {
-        axios.post("http://89.108.65.167:8092/register",
+        axios.post("http://dimahoperskiy.ru:8092/register",
             {login: formData.login, email: formData.email, password: formData.password},
             {withCredentials: true})
             .then((response) => {
