@@ -6,16 +6,19 @@ import {BrowserRouter} from "react-router-dom";
 import React from "react";
 import {Provider} from "react-redux";
 import AppContainer from "./components/AppContainer";
+import HttpsRedirect from 'react-https-redirect';
 
 
 ReactDOM.render(
-    <BrowserRouter>
-        <React.StrictMode>
-            <Provider store={store}>
-                <AppContainer/>
-            </Provider>
-        </React.StrictMode>
-    </BrowserRouter>,
+    <HttpsRedirect>
+        <BrowserRouter>
+            <React.StrictMode>
+                <Provider store={store}>
+                    <AppContainer/>
+                </Provider>
+            </React.StrictMode>
+        </BrowserRouter>
+    </HttpsRedirect>,
     document.getElementById('root')
 );
 
