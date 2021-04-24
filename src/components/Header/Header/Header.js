@@ -6,9 +6,11 @@ import img from "./me.jpg"
 const Header = (props) => {
     return (
         <header className={style.header}>
+            <div className={style.imgWrapper}>
                 <img
                     src={img}
                     alt="logo" className={style.logo}/>
+            </div>
             <div className={style.login}>
                 {props.isLoggedIn
                     ?
