@@ -23,7 +23,7 @@ let mapDispatchToProps = {
 
 class HeaderContainer extends React.Component {
     logout = () => {
-        axios.get("http://dimahoperskiy.ru:8092/exit", {withCredentials: true})
+        axios.get("https://dimahoperskiy.ru:8443/exit", {withCredentials: true})
             .then(response => {
                 this.props.clearUserInfo()
                 this.props.logOut()

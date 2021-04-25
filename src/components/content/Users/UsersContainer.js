@@ -34,7 +34,7 @@ const mapDispatchToProps = {
 class UsersAPI extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`http://dimahoperskiy.ru:8092/users/?size=${this.props.pageSize}&page=${this.props.currentPage}`)
+        axios.get(`https://dimahoperskiy.ru:8443/users/?size=${this.props.pageSize}&page=${this.props.currentPage}`)
             .then(response => {
                 this.props.setUsers(response.data.content)
                 this.props.setTotalPages(response.data.totalPages)
@@ -45,7 +45,7 @@ class UsersAPI extends React.Component {
     paginate = (i) => {
         this.props.toggleIsFetching(true)
         this.props.setCurrentPage(i)
-        axios.get(`http://dimahoperskiy.ru:8092/users/?size=${this.props.pageSize}&page=${i}`)
+        axios.get(`https://dimahoperskiy.ru:8443/users/?size=${this.props.pageSize}&page=${i}`)
             .then(response => {
                 this.props.setUsers(response.data.content)
                 this.props.toggleIsFetching(false)

@@ -44,15 +44,15 @@ class MessagesContainer extends React.Component {
             this.props.setIsDialogActive(true)
         }
 
-        axios.get("http://dimahoperskiy.ru:8092/users/profile", {withCredentials: true})
+        axios.get("https://dimahoperskiy.ru:8443/users/profile", {withCredentials: true})
             .then(response1 => {
                 this.props.setCurrentUser(response1.data.login, response1.data.email, response1.data.id)
-                axios.get("http://dimahoperskiy.ru:8092/users/")
+                axios.get("https://dimahoperskiy.ru:8443/users/")
                     .then(response2 => {
                         let resp = response2.data.content.filter(el => {
                             if (el.login === this.props.match.params.recipient) {
                                 let id = el.id
-                                axios.get("http://dimahoperskiy.ru:8092/messages/" + id + "/" + this.props.userId)
+                                axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId)
                                     .then(response3 => {
                                         this.props.setMessages(response3.data)
                                     })
@@ -70,7 +70,7 @@ class MessagesContainer extends React.Component {
 
     setRecipient = (name, id) => {
         this.props.setIsDialogActive(true)
-        axios.get("http://dimahoperskiy.ru:8092/messages/" + id + "/" + this.props.userId)
+        axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId)
             .then(response => {
                 this.props.setMessages(response.data)
             })
