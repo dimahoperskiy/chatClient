@@ -13,9 +13,7 @@ ReactDOM.render(
         <BrowserRouter>
             <React.StrictMode>
                 <Provider store={store}>
-                    <HttpsRedirect>
                         <AppContainer/>
-                    </HttpsRedirect>
                 </Provider>
             </React.StrictMode>
         </BrowserRouter>,
