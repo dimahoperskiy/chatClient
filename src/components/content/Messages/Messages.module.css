@@ -12,9 +12,12 @@ h2 {
 
 .dialogsItems {
     height: 400px;
-    overflow: scroll;
-    width: 20%;
     margin-right: 2%;
+    overflow-y: scroll;
+    overflow-x: auto;
+    position: relative;
+    width: fit-content;
+    padding-right: 5%;
 }
 
 .messagesItems {

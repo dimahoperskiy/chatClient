@@ -66,7 +66,6 @@ class AppContainer extends React.Component {
     };
 
     onNotificationReceived = (msg) => {
-        debugger
         // получили уведомление
         const notification = JSON.parse(msg.body);
         if (notification.deleted) { // об удалении
@@ -83,12 +82,11 @@ class AppContainer extends React.Component {
                     this.props.setMessages(newMessages);
                 })
         } else { // о новом сообщении
-            debugger
             axios.get("https://dimahoperskiy.ru:8443/messages/" + notification.id)
                 .then((message) => {
-                    debugger
-                    this.props.updateMessages(message.data);
-                    debugger
+                    if (message.data.senderName === this.props.recipient || message.data.senderName === this.props.login) {
+                        this.props.updateMessages(message.data);
+                    }
                 })
         }
     };
@@ -96,7 +94,6 @@ class AppContainer extends React.Component {
     sendMessage = (formData, dispatch) => {
         axios.get("https://dimahoperskiy.ru:8443/users/" + this.props.recipient)
             .then(response => {
-                debugger
                 let msg = formData.text
                 if (msg.trim() !== "") {
                     const message = {
