@@ -14,14 +14,6 @@ button:hover {
 
 .app-wrapper {
   font-size: 22px;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 150px 1fr;
-  grid-gap: 20px;
-  grid-template-areas:
-"header header"
-"nav content"
-;
 }
 
 .app-wrapper-content {
@@ -30,6 +22,12 @@ button:hover {
   border-radius: 20px;
   padding: 20px;
   margin-right: 10px;
+  width: 85%;
+}
+
+.second-wrapper {
+  display: flex;
+  width: 100%;
 }
 
 /*.popup-overlay {*/

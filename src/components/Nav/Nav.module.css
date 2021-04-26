@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-area: nav;
     background-color: #30c3be;
     border-radius: 20px;
     min-height: 500px;
     margin-left: 10px;
     padding: 15px;
+    margin-right: 1%;
+    width: 10%;
 }
 
 .navigation {
