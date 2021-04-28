@@ -9,6 +9,8 @@ const Home = (props) => {
             <div className={style.homeContent}>
                 <p>Hi, this is my client-server chat application!</p>
                 <p>Technology stack used: Spring Boot + Postgresql + ReactJS</p>
+                <p>Made by: Khoperskiy Dmitriy Urievich, PI19-2</p>
+                <p>Scientific director: Kublik Evgeny Ilyich </p>
                 <a href="http://github.com/dimahoperskiy" target="_blank">Github</a>
                 <div className={style.imgWrapper}>
                     <img src={img} alt="me" className={style.meImg}/>
