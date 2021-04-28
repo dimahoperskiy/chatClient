@@ -72,7 +72,7 @@ class AppContainer extends React.Component {
             let newMessages = this.props.messages.filter(el => el.id !== notification.id)
             this.props.setMessages(newMessages)
         } else if (notification.updated) { // об обновлении
-            axios.get("https://dimahoperskiy.ru:8443/messages/" + notification.id)
+            axios.get("https://dimahoperskiy.ru:8443/messages/" + notification.id, {withCredentials: true})
                 .then((message) => {
                     let content = message.data.content
                     let newMessages = this.props.messages.map(el => {
@@ -82,7 +82,7 @@ class AppContainer extends React.Component {
                     this.props.setMessages(newMessages);
                 })
         } else { // о новом сообщении
-            axios.get("https://dimahoperskiy.ru:8443/messages/" + notification.id)
+            axios.get("https://dimahoperskiy.ru:8443/messages/" + notification.id, {withCredentials: true})
                 .then((message) => {
                     if (message.data.senderName === this.props.recipient || message.data.senderName === this.props.login) {
                         this.props.updateMessages(message.data);

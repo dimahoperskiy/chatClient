@@ -9,6 +9,7 @@ import ProfileContainer from "./content/Profile/ProfileContainer";
 import HeaderContainer from "./Header/HeaderContainer";
 import LoginContainer from "./authentification/Login/LoginContainer";
 import RegisterContainer from "./authentification/Register/RegisterContainer";
+import UserNotFoundPage from "./errors/UserNotFoundPage";
 
 
 const App = (props) => {
@@ -31,6 +32,8 @@ const App = (props) => {
                     <Route path='/users' component={UsersContainer}/>
                     <Route path='/login' component={LoginContainer}/>
                     <Route path='/register' component={RegisterContainer}/>
+
+                    <Route path="/404" component={UserNotFoundPage}/>
                 </div>
             </div>
         </div>

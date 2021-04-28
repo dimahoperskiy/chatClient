@@ -12,6 +12,7 @@ import {setCurrentUser} from "../../../redux/reducers/authReducer";
 import {connect} from "react-redux";
 import axios from "axios";
 import {withRouter} from "react-router-dom";
+import {Redirect} from "react-router";
 
 const mapStateToProps = (state) => {
     return ({
@@ -52,13 +53,23 @@ class MessagesContainer extends React.Component {
                         let resp = response2.data.content.filter(el => {
                             if (el.login === this.props.match.params.recipient) {
                                 let id = el.id
-                                axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId)
+                                axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId,
+                                    {withCredentials: true})
                                     .then(response3 => {
                                         this.props.setMessages(response3.data)
                                     })
                             }
                             return el.login !== this.props.login
                         })
+                        if (this.props.match.params.recipient !== undefined) {
+                            this.userNotFound = true
+                            resp.map(el => {
+                                if (this.props.match.params.recipient === el.login) this.userNotFound = false
+                            })
+                        } else {
+                            this.userNotFound = false
+                        }
+
                         this.props.setDialogs(resp)
                         // this.props.toggleIsFetching(false)
                     })
@@ -70,7 +81,8 @@ class MessagesContainer extends React.Component {
 
     setRecipient = (name, id) => {
         this.props.setIsDialogActive(true)
-        axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId)
+        axios.get("https://dimahoperskiy.ru:8443/messages/" + id + "/" + this.props.userId,
+            {withCredentials: true})
             .then(response => {
                 this.props.setMessages(response.data)
             })
@@ -81,16 +93,20 @@ class MessagesContainer extends React.Component {
 
 
     render() {
-        return <Messages dialogs={this.props.dialogs}
-                         messages={this.props.messages}
-                         login={this.props.login}
-                         recipient={this.props.recipient}
-                         userId={this.props.userId}
-                         setRecipient={this.setRecipient}
-                         isDialogActive={this.props.isDialogActive}
-                         deleteMessage={this.props.deleteMessage}
-                         sendMessage={this.props.sendMessage}
-                         editMessage={this.props.editMessage}/>
+        if (this.userNotFound) {
+            return <Redirect to="/404"/>
+        } else {
+            return <Messages dialogs={this.props.dialogs}
+                             messages={this.props.messages}
+                             login={this.props.login}
+                             recipient={this.props.recipient}
+                             userId={this.props.userId}
+                             setRecipient={this.setRecipient}
+                             isDialogActive={this.props.isDialogActive}
+                             deleteMessage={this.props.deleteMessage}
+                             sendMessage={this.props.sendMessage}
+                             editMessage={this.props.editMessage}/>
+        }
     }
 }
 
