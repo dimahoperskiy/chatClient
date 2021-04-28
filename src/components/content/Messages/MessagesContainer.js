@@ -65,7 +65,8 @@ class MessagesContainer extends React.Component {
                         if (this.props.match.params.recipient !== undefined) {
                             this.userNotFound = true
                             resp.map(el => {
-                                if (this.props.match.params.recipient === el.login) this.userNotFound = false
+                                if (this.props.match.params.recipient === el.login &&
+                                    this.props.match.params.recipient !== this.props.login) this.userNotFound = false
                             })
                         } else {
                             this.userNotFound = false
