@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
         login: state.auth.login,
         recipient: state.messagesPage.recipient,
         isConnected: state.messagesPage.isConnected,
-        isDialogActive: state.messagesPage.isDialogActive
+        isDialogActive: state.messagesPage.isDialogActive,
+        isLoggedIn: state.auth.isLoggedIn
     })
 }
 
@@ -103,6 +104,7 @@ class MessagesContainer extends React.Component {
                              userId={this.props.userId}
                              setRecipient={this.setRecipient}
                              isDialogActive={this.props.isDialogActive}
+                             isLoggedIn={this.props.isLoggedIn}
                              deleteMessage={this.props.deleteMessage}
                              sendMessage={this.props.sendMessage}
                              editMessage={this.props.editMessage}/>

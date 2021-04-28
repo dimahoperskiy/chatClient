@@ -2,9 +2,13 @@ import React from "react"
 import Info from "./Info/Info";
 import style from "./Profile.module.css"
 import Preloader from "../../common/Preloader/Preloader";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 
 const Profile = (props) => {
+    let history = useHistory()
+    if (!props.isLoggedIn) {
+        history.push("")
+    }
 
     return (
         <div className={style.profileWrapper}>

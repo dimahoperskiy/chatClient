@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         currentPage: state.usersPage.currentPage,
         totalPages: state.usersPage.totalPages,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        isLoggedIn: state.auth.isLoggedIn
     }
 }
 
@@ -60,6 +61,7 @@ class UsersAPI extends React.Component {
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
                       isFetching={this.props.isFetching}
+                      isLoggedIn={this.props.isLoggedIn}
                       paginate={this.paginate}/>
     }
 }

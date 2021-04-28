@@ -4,8 +4,14 @@ import MessagesForm from "./MessagesForm/MessagesForm";
 import Message from "./Message/Message";
 import Dialog from "./Dialog/Dialog";
 import {useRef, useEffect} from "react"
+import {useHistory} from "react-router-dom";
 
 const Messages = (props) => {
+    let history = useHistory()
+    if (!props.isLoggedIn) {
+        history.push("")
+    }
+
     const refer = useRef(null)
     const scroll = () => {
         if (refer.current !== null) {

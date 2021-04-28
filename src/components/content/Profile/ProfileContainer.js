@@ -44,7 +44,8 @@ class ProfileAPI extends React.Component {
         return (<Profile
             user={this.props.user}
             isFetching={this.props.isFetching}
-            me={this.props.me}/>)
+            me={this.props.me}
+            isLoggedIn={this.props.isLoggedIn}/>)
     }
 }
 
