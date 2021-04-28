@@ -35,10 +35,6 @@ const RegisterForm = (props) => {
                        className={style.input}
                        validate={passwordRequired}/>
             </div>
-            <div className={style.rememberMe}>
-                <Field name='rememberMe' component='input' type='checkbox'/>
-                <p>Remember me</p>
-            </div>
             <div className={style.btnWrapper}>
                 <button type='submit' className={style.btn}>Sign up</button>
             </div>
