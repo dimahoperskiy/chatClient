@@ -4,6 +4,7 @@ import {useRef, useEffect} from "react"
 const TextArea = ({input, meta, defaultValue, ...props}) => {
     let ref = useRef(null)
 
+
     useEffect(() => {
         if (ref.current && ref.current.value === defaultValue) {
             let len = ref.current.value.length
@@ -12,7 +13,7 @@ const TextArea = ({input, meta, defaultValue, ...props}) => {
     })
 
     return (
-        <textarea {...input} {...props} ref={ref} defaultValue={defaultValue}/>
+        <textarea {...input} {...props} autoFocus ref={ref} defaultValue={defaultValue}/>
     )
 }
 

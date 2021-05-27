@@ -1,9 +1,10 @@
 import React from "react"
 import {connect} from "react-redux"
 import Profile from "./Profile";
-import axios from "axios";
 import {setUser, toggleIsFetching} from "../../../redux/reducers/profileReducer";
 import {withRouter} from "react-router-dom";
+import api from "../../../api/api";
+import {Redirect} from "react-router";
 
 
 let mapStateToProps = (state) => {
@@ -26,26 +27,32 @@ class ProfileAPI extends React.Component {
         let userId = this.props.match.params.userId
 
         if (userId) {
-            axios.get("https://dimahoperskiy.ru:8443/users/" + userId)
-                .then(response => {
-                    this.props.setUser(response.data)
+            api.getUser(userId)
+                .then(data => {
+                    this.props.setUser(data)
                     this.props.toggleIsFetching(false)
                 })
         } else {
-            axios.get("https://dimahoperskiy.ru:8443/users/profile", {withCredentials: true})
-                .then(response => {
-                    this.props.setUser(response.data)
+            api.getProfile()
+                .then(data => {
+                    this.props.setUser(data)
                     this.props.toggleIsFetching(false)
                 })
         }
     }
 
     render() {
-        return (<Profile
-            user={this.props.user}
-            isFetching={this.props.isFetching}
-            me={this.props.me}
-            isLoggedIn={this.props.isLoggedIn}/>)
+        if (!this.props.isLoggedIn) {
+            return <Redirect to="login"/>
+        } else {
+            return (
+                <Profile
+                    user={this.props.user}
+                    isFetching={this.props.isFetching}
+                    me={this.props.me}
+                    isLoggedIn={this.props.isLoggedIn}/>
+            )
+        }
     }
 }
 

@@ -1,45 +1,17 @@
 import React from "react";
 import Login from "./Login";
-import axios from "axios";
-import {setCurrentUser} from "../../../redux/reducers/authReducer";
-import {setIsWrongAuth} from "../../../redux/reducers/authReducer";
+import {loginThunk} from "../../../redux/reducers/authReducer";
 import {connect} from "react-redux";
-import {reset} from "redux-form";
 
-const mapStateToProps = (state) => {
-    return {
-        // login: state.auth.login,
-        // email: state.auth.email,
-        // isLoggedIn: state.auth.isLoggedIn
-    }
-}
+const mapStateToProps = () => {}
 
 let mapDispatchToProps = {
-    setCurrentUser,
-    setIsWrongAuth
+    loginThunk
 }
 
-
 class LoginContainer extends React.Component {
-    login = (formData, dispatch, func) => {
-        axios.post("https://dimahoperskiy.ru:8443/login",
-            {login: formData.login, password: formData.password},
-            {withCredentials: true})
-            .then(response => {
-                this.props.setCurrentUser(response.data.login, response.data.email, response.data.id)
-                dispatch(reset('login'))
-                func()
-                // this.props.toggleIsFetching(false)
-            })
-            .catch(err => {
-                this.props.setIsWrongAuth(err.response.data)
-            })
-
-
-    }
-
     render() {
-        return <Login onSubmit={this.login}/>
+        return <Login onSubmit={this.props.loginThunk}/>
     }
 }
 

@@ -8,8 +8,9 @@ import {
     unfollow
 } from "../../../redux/reducers/usersReducer";
 import * as React from "react";
-import * as axios from "axios";
 import Users from "./Users";
+import api from "../../../api/api";
+import {Redirect} from "react-router";
 
 const mapStateToProps = (state) => {
     return {
@@ -35,10 +36,10 @@ const mapDispatchToProps = {
 class UsersAPI extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://dimahoperskiy.ru:8443/users/?size=${this.props.pageSize}&page=${this.props.currentPage}`)
-            .then(response => {
-                this.props.setUsers(response.data.content)
-                this.props.setTotalPages(response.data.totalPages)
+        api.getPageableUsers(this.props.pageSize, this.props.currentPage)
+            .then(data => {
+                this.props.setUsers(data.content)
+                this.props.setTotalPages(data.totalPages)
                 this.props.toggleIsFetching(false)
             })
     }
@@ -46,23 +47,29 @@ class UsersAPI extends React.Component {
     paginate = (i) => {
         this.props.toggleIsFetching(true)
         this.props.setCurrentPage(i)
-        axios.get(`https://dimahoperskiy.ru:8443/users/?size=${this.props.pageSize}&page=${i}`)
-            .then(response => {
-                this.props.setUsers(response.data.content)
+        api.getPageableUsers(this.props.pageSize, i)
+            .then(data => {
+                this.props.setUsers(data.content)
                 this.props.toggleIsFetching(false)
             })
     }
 
     render() {
-        return <Users users={this.props.users}
-                      pageSize={this.props.pageSize}
-                      currentPage={this.props.currentPage}
-                      totalPages={this.props.totalPages}
-                      follow={this.props.follow}
-                      unfollow={this.props.unfollow}
-                      isFetching={this.props.isFetching}
-                      isLoggedIn={this.props.isLoggedIn}
-                      paginate={this.paginate}/>
+        if (!this.props.isLoggedIn) {
+            return <Redirect to="login"/>
+        } else {
+            return (
+                <Users users={this.props.users}
+                       pageSize={this.props.pageSize}
+                       currentPage={this.props.currentPage}
+                       totalPages={this.props.totalPages}
+                       follow={this.props.follow}
+                       unfollow={this.props.unfollow}
+                       isFetching={this.props.isFetching}
+                       isLoggedIn={this.props.isLoggedIn}
+                       paginate={this.paginate}/>
+            )
+        }
     }
 }
 

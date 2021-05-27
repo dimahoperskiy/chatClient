@@ -4,14 +4,8 @@ import MessagesForm from "./MessagesForm/MessagesForm";
 import Message from "./Message/Message";
 import Dialog from "./Dialog/Dialog";
 import {useRef, useEffect} from "react"
-import {useHistory} from "react-router-dom";
 
 const Messages = (props) => {
-    let history = useHistory()
-    if (!props.isLoggedIn) {
-        history.push("")
-    }
-
     const refer = useRef(null)
     const scroll = () => {
         if (refer.current !== null) {
@@ -23,8 +17,7 @@ const Messages = (props) => {
         scroll()
     })
 
-
-    let dialogs = props.dialogs.map(el => <Dialog name={el.login} id={el.id} setRecipient={props.setRecipient}/>)
+    let dialogs = props.dialogs.map(el => <Dialog name={el.login} id={el.id} userId={props.userId} setRecipient={props.setRecipient}/>)
     // let cnt = 1
     let messages = props.messages.map(msg => {
         return <Message content={msg.content}
