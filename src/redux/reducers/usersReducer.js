@@ -7,7 +7,7 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 let initialState = {
     users: [],
-    pageSize: 3,
+    pageSize: 5,
     currentPage: 0,
     totalPages: 1,
     isFetching: false
@@ -16,10 +16,10 @@ let initialState = {
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
-            // axios.put("https://dimahoperskiy.ru:8443/users", {id: action.userId, follow: true})
+            // axios.put("http://localhost:8092/users", {id: action.userId, follow: true})
             return ({
                 ...state,
-                // users: axios.get("https://dimahoperskiy.ru:8443/users").then(response => response)
+                // users: axios.get("http://localhost:8092/users").then(response => response)
                 users: state.users.map(el => {
                     if (el.id === action.userId) {
                         return {...el, follow: true}
@@ -27,10 +27,10 @@ const usersReducer = (state = initialState, action) => {
                 })
             })
         case UNFOLLOW:
-            // axios.put("https://dimahoperskiy.ru:8443/users", {id: action.userId, follow: false})
+            // axios.put("http://localhost:8092/users", {id: action.userId, follow: false})
             return ({
                 ...state,
-                // users: axios.get("https://dimahoperskiy.ru:8443/users").then(response => response)
+                // users: axios.get("http://localhost:8092/users").then(response => response)
                 users: state.users.map(el => {
                     if (el.id === action.userId) {
                         return {...el, follow: false}

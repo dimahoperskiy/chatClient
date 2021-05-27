@@ -1,10 +1,10 @@
 import React from "react"
 import {connect} from "react-redux";
 import Header from "./Header/Header";
-import axios from "axios";
 import {setCurrentUser, logOut} from "../../redux/reducers/authReducer";
 import { clearUserInfo} from "../../redux/reducers/profileReducer";
 import {updateMessages} from "../../redux/reducers/messagesReducer";
+import api from "../../api/api";
 
 const mapStateToProps = (state) => {
     return {
@@ -23,8 +23,8 @@ let mapDispatchToProps = {
 
 class HeaderContainer extends React.Component {
     logout = () => {
-        axios.get("https://dimahoperskiy.ru:8443/exit", {withCredentials: true})
-            .then(response => {
+        api.logout()
+            .then(() => {
                 this.props.clearUserInfo()
                 this.props.logOut()
             })
@@ -32,9 +32,7 @@ class HeaderContainer extends React.Component {
 
     render() {
         return (
-
             <Header login={this.props.login} isLoggedIn={this.props.isLoggedIn} logout={this.logout}/>
-
         )
     }
 }

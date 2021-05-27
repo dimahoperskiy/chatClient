@@ -2,13 +2,9 @@ import * as React from "react";
 import style from "./Users.module.css";
 import User from "./User/User";
 import Preloader from "../../common/Preloader/Preloader";
-import {useHistory} from "react-router-dom";
 
 const Users = (props) => {
-    let history = useHistory()
-    if (!props.isLoggedIn) {
-        history.push("")
-    }
+
     let pagesList = []
     for (let i = 0; i < props.totalPages; i++) {
         pagesList.push(i)

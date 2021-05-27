@@ -8,7 +8,7 @@ import img from "../../../common/mike.png"
 const Dialog = (props) => {
 
     let setRecipient = () => {
-        return props.setRecipient(props.name, props.id)
+        return props.setRecipient(props.name, props.id, props.userId)
     }
 
     return (
