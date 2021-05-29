@@ -55,7 +55,7 @@ class AppContainer extends React.Component {
     }
 
     connect = () => {
-        let sock = new SockJS("http://localhost:8092/ws");
+        let sock = new SockJS("http://localhost:8093/ws");
         this.stompClient = Stomp.over(sock)
         this.stompClient.debug = null
         this.stompClient.connect({}, this.onConnected, this.onError);
