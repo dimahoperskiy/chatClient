@@ -4,6 +4,8 @@
 This is a fullstack web-application. I've implemented RESTful architecture. 
 Backend uses HTTP (for authentication and other) and WebSocket for messaging.
 
+Btw it looks pretty ugly because the main goal was to practise on a big (relatively) project, not to make it look good.
+
 Example of registration:
 
 <img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register%20(1).gif" width="80%"/>
