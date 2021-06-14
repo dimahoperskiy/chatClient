@@ -14,4 +14,6 @@ Example of chatting:
 <img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/messages%20(1).gif" width="80%"/>
 
 
+Example of finding a user:
 
+<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/users.gif" width="80%"/>
