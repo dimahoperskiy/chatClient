@@ -2,7 +2,9 @@
 ## Stack used: React JS + Redux, Spring Boot
 
 This is a fullstack web-application. I've implemented RESTful architecture. 
-Backend uses HTTP (for authentication and other) and WebSocket for messaging.
+
+<b>Backend:</b>
+Using HTTP (for authentication and other) and WebSocket for messaging. Using Spring Security and Json Web Tokens to implement authorization.
 
 Btw it looks pretty ugly because the main goal was to practise on a big (relatively) project, not to make it look good.
 
