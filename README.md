@@ -6,7 +6,12 @@ Backend uses HTTP (for authentication and other) and WebSocket for messaging.
 
 Example of registration:
 
-<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register.gif" width="80%"/>
+<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register%20(1).gif" width="80%"/>
+
+
+Example of chatting:
+
+<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/messages%20(1).gif" width="80%"/>
 
 
 
