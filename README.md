@@ -1,7 +1,7 @@
 # Client-Server Chat Application
 ## Stack used: React JS, Spring Boot
 
-<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register.gif" width="128"/>
+<img src="https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register.gif" width="50%"/>
 
 ![](https://github.com/dimahoperskiy/dimahoperskiy/blob/main/register.gif)
 
