@@ -1,10 +1,17 @@
 # Client-Server Chat Application
 ## Stack used: React JS + Redux, Spring Boot
 
-This is a fullstack web-application. I've implemented RESTful architecture. 
+This is a fullstack web-application.
+
+
+<b>Frontend:</b>
+<ul>
+  <li>Using Redux to manage state</li>
+</ul>
 
 <b>Backend:</b>
 Using HTTP (for authentication and other) and WebSocket for messaging. Using Spring Security and Json Web Tokens to implement authorization.
+
 
 Btw it looks pretty ugly because the main goal was to practise on a big (relatively) project, not to make it look good.
 
